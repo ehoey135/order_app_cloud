@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New Order</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+ 
+<div class="page">
+  <header class="page-header">
+    <span class="eyebrow">Order System</span>
+    <h1>New Order</h1>
+    <p class="subtitle">Enter customer, dispatch, and part details below.</p>
+  </header>
+ 
+  <form id="order-form" novalidate>
+ 
+    <section class="card">
+      <h2>Customer</h2>
+      <label>
+        Customer name
+        <input type="text" id="customerName" required />
+      </label>
+    </section>
+ 
+    <section class="card">
+      <h2>Dispatch information</h2>
+      <div class="grid-3">
+        <label>
+          Delivery date
+          <input type="date" id="deliveryDate" required />
+        </label>
+        <label>
+          Route
+          <input type="text" id="route" required />
+        </label>
+        <label>
+          Cut location
+          <input type="text" id="cutLocation" required />
+        </label>
+      </div>
+    </section>
+ 
+    <section class="card">
+      <h2>Order details</h2>
+      <div class="grid-3">
+        <label>
+          Bag
+          <input type="text" id="bag" required />
+        </label>
+        <label>
+          Company
+          <select id="companyId" required>
+            <option value="">Loading companies…</option>
+          </select>
+        </label>
+      </div>
+      <div class="grid-2">
+        <label>
+          Wafer quantity
+          <input type="number" id="waferQuantity" min="0" value="0" />
+        </label>
+        <label>
+          Chip quantity
+          <input type="number" id="chipQuantity" min="0" value="0" />
+        </label>
+      </div>
+    </section>
+ 
+    <section class="card">
+      <h2>Wafers</h2>
+      <div id="wafer-fields" class="record-list">
+        <p class="empty-note">Set a wafer quantity above to add wafer fields.</p>
+      </div>
+    </section>
+ 
+    <section class="card">
+      <h2>Chips</h2>
+      <div id="chip-fields" class="record-list">
+        <p class="empty-note">Set a chip quantity above to add chip fields.</p>
+      </div>
+    </section>
+ 
+    <div class="actions">
+      <button type="submit" id="submit-btn">Create order</button>
+    </div>
+ 
+    <div id="result" class="result" hidden></div>
+  </form>
+</div>
+ 
+<script src="app.js"></script>
+</body>
+</html>
+
